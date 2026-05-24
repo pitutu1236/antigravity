@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Las 100 Mejores Películas del Siglo XXI - NYT</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explora y visualiza los trailers oficiales de las 100 mejores películas del siglo XXI según la aclamada lista de The New York Times.">
+  <meta name="keywords" content="cine, peliculas, siglo XXI, trailers, youtube, new york times, mejores peliculas">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Decorative Glows -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+  <div class="glow-bg glow-3"></div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <i class="fa-solid fa-film logo-icon"></i>
+        <span>NYT <span class="accent-text">100</span></span>
+      </div>
+      <div class="hero-content">
+        <h1>Las 100 mejores películas <br>del <span class="gradient-text">siglo XXI</span></h1>
+        <p class="subtitle">Basado en la encuesta de The New York Times a más de 500 profesionales del cine.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Sticky Control Panel -->
+    <section class="control-panel">
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="search-input" placeholder="Buscar por título original, español o año..." autocomplete="off">
+        <button id="clear-search" class="clear-btn" style="display: none;">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="filters">
+        <!-- Era Filter Tabs -->
+        <div class="filter-group era-tabs">
+          <button class="tab-btn active" data-era="all">Todas</button>
+          <button class="tab-btn" data-era="2020s">2020s</button>
+          <button class="tab-btn" data-era="2010s">2010s</button>
+          <button class="tab-btn" data-era="2000s">2000s</button>
+        </div>
+
+        <!-- Sort Select and Meta Info -->
+        <div class="filter-group sort-group">
+          <label for="sort-select"><i class="fa-solid fa-arrow-down-wide-short"></i> Ordenar:</label>
+          <div class="custom-select-wrapper">
+            <select id="sort-select">
+              <option value="rank-asc">Ranking (1 - 100)</option>
+              <option value="rank-desc">Ranking (100 - 1)</option>
+              <option value="year-desc">Año (Más Reciente)</option>
+              <option value="year-asc">Año (Más Antiguo)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-stats">
+        <span id="movies-count">Cargando catálogo...</span>
+      </div>
+    </section>
+
+    <!-- Movies Grid -->
+    <section id="movies-grid" class="movies-grid">
+      <!-- Cards will be injected dynamically -->
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Cargando películas...</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2026 • Diseñado con pasión cinematográfica</p>
+      <p class="source-info">Datos extraídos de la encuesta de The New York Times publicada en 2025.</p>
+    </div>
+  </footer>
+
+  <!-- Trailer Player Modal -->
+  <div id="trailer-modal" class="modal-overlay" aria-hidden="true" role="dialog">
+    <div class="modal-container">
+      <button id="close-modal" class="close-btn" aria-label="Cerrar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-video-wrapper">
+        <!-- Iframe will be injected here -->
+        <div id="player-placeholder" class="player-placeholder">
+          <div class="spinner"></div>
+        </div>
+      </div>
+      <div class="modal-info">
+        <div class="modal-header-info">
+          <span id="modal-rank" class="rank-badge">#1</span>
+          <div class="modal-titles">
+            <h2 id="modal-title-original">Parasite</h2>
+            <p id="modal-title-spanish" class="sub-spanish">Parásitos</p>
+          </div>
+          <span id="modal-year" class="year-badge">2019</span>
+        </div>
+        <div class="modal-actions">
+          <a id="modal-external-link" href="#" target="_blank" class="btn btn-secondary">
+            <i class="fa-brands fa-youtube"></i> Ver en YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript App Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
